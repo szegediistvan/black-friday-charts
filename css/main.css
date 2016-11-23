@@ -1,0 +1,29 @@
+.canvas-fluid,
+.iframe-fluid {
+    width: 100% !important;
+}
+
+.count-item {
+    background-color: #eee;
+    text-align: center;
+    height: 290px;
+    font-size: 80px;
+    font-weight: bold;
+    padding-top: calc(50% - 130px);
+    position: relative;
+}
+
+.count-item:before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+}
+
+#last-counts:before {
+    content: "Last counts";
+}
+
+#last-values:before {
+    content: "Last values";
+}

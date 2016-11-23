@@ -1,0 +1,23 @@
+{
+  "name": "black-friday",
+  "description": "HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.",
+  "main": "gulpfile.js",
+  "authors": [
+    "istvan.szegedi"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "3.3.7",
+    "chart.js": "chartjs#^2.4.0"
+  }
+}
