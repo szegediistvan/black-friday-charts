@@ -1,4 +1,4 @@
-var refreshTime = 10000;
+var refreshTime = 60000;
 
 var ordersCountChartElement = document.getElementById("orders-count-chart");
 var ordersValueChartElement = document.getElementById("orders-value-chart");
@@ -15,7 +15,7 @@ var options = {
     }
 };
 
-$.getJSON("data/data.json", function (json) {
+$.getJSON("api/salesData", function (json) {
 
     var datas = [];
     $.each( json, function( key, val ) {
@@ -87,18 +87,43 @@ $.getJSON("data/data.json", function (json) {
     $('#last-counts').html(datas[3]);
     $('#last-values').html(datas[4]);
 
-    $('.count').each(function () {
-        $(this).prop('Counter',0).animate({
+    $('#last-counts').each(function () {
+        $(this).prop('Counter', datas[1][datas[1].length-2]).animate({
             Counter: $(this).text()
         }, {
-            duration: 3000,
+            duration: refreshTime,
             easing: 'swing',
             step: function (now) {
-                $(this).text(Math.ceil(now));
+                $(this).text(addCommas(Math.ceil(now)));
+            }
+        });
+    });
+
+    $('#last-values').each(function () {
+        $(this).prop('Counter', datas[2][datas[1].length-2]).animate({
+            Counter: $(this).text()
+        }, {
+            duration: refreshTime,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(addCommas(Math.ceil(now)));
             }
         });
     });
 });
+
+function addCommas(nStr)
+{
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
 
 function refreshChart(chart){
     chart.update();
