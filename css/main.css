@@ -25,9 +25,9 @@
 }
 
 #last-counts:before {
-    content: "Last counts";
+    content: "Total number of orders";
 }
 
 #last-values:before {
-    content: "Last values";
+    content: "Gross total of orders (HUF)";
 }
