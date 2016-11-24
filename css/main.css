@@ -6,18 +6,22 @@
 .count-item {
     background-color: #eee;
     text-align: center;
-    height: 290px;
-    font-size: 80px;
+    height: 145px;
+    font-size: 70px;
     font-weight: bold;
-    padding-top: calc(50% - 130px);
+    padding-top: 20px;
     position: relative;
+}
+
+.count-item-1 {
+    margin-bottom: 20px;
 }
 
 .count-item:before {
     position: absolute;
     top: 10px;
     left: 10px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 #last-counts:before {
